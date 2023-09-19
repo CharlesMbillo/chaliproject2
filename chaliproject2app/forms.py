@@ -1,4 +1,5 @@
 from django import forms
+from .models import Contact
 
 class ContactForm(forms.Form):
     first_name = forms.CharField(max_length=100)
@@ -17,3 +18,8 @@ class ContactForm(forms.Form):
         if not phone_number.isdigit() or len(phone_number) != 10:
             raise forms.ValidationError('Phone number must be a 10-digit number')
         return phone_number
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model =Contact
+        fields = ['first_name','last_name','phone_number','email']
+        
