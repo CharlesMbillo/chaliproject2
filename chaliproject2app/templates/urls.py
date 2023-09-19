@@ -4,5 +4,5 @@ from chaliproject2app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contact/', views.contact, name='contact'),
+    path('contact/', views.Contact, name='contact'),
 ]
